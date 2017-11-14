@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <div id="future"></div>
+    <form id="form" id="chat_form">
+        <input id="name" type="text">
+        <input id="des" type="text">
+        <input id="price" type="text">
+        <button type="button" id="Send">Send</button>
+    </form>
+    <input id="name2" type="text">
+    <button type="button" id="Get">Send</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:3000');
+        socket.on('connect', function (data) {
+            socket.emit('hello', 'hello');
+        });
+        $(document).ready(function () {
+            $('#Send').click(function (e) {
+                e.preventDefault();
+                var name = $('#name').val();
+                var des = $('#des').val();
+                var price =
+                    $('#price').val();
+                socket.emit('save', {
+                    name: name,
+                    description: des,
+                    price: price
+                });
+            });
+            $('#Get').click(function (e) {
+                e.preventDefault();
+                var name = $('#name2').val();
+                socket.emit('get', {
+                    name: name
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

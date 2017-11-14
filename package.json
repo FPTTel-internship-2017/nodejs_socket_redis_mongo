@@ -1,0 +1,27 @@
+{
+  "name": "nodejs_socket_redis_mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tukida/nodejs_socket_redis_mongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tukida/nodejs_socket_redis_mongo/issues"
+  },
+  "homepage": "https://github.com/tukida/nodejs_socket_redis_mongo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.2",
+    "redis": "^2.8.0",
+    "socket.io": "^2.0.4"
+  }
+}
